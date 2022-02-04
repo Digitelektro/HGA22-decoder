@@ -14,6 +14,24 @@ namespace HGA22
     public partial class Form1 : Form
     {
 
+        public static readonly List<string> baudRates = new List<string>
+        {
+            "200",
+            "300",
+            "600",
+            "1200",
+            "2400",
+            "4800",
+            "9600",
+            "19200",
+            "38400",
+            "57600",
+            "115200",
+            "230400",
+            "460800",
+            "921600"
+        };
+
         bool HGAStartBitDetected = false;
         byte[] HGAData = new byte[300];
         int HGAByteCounter = 0;
@@ -26,6 +44,11 @@ namespace HGA22
             {
                 comboBox1.Items.Add(port);
             }
+            foreach(String baudrate in baudRates)
+            {
+                comboBoxBaudrate.Items.Add(baudrate);
+            }
+            comboBoxBaudrate.SelectedIndex = comboBoxBaudrate.Items.IndexOf("200");
         }
 
         private void btnOpen_Click(object sender, EventArgs e)
@@ -41,6 +64,8 @@ namespace HGA22
                 else
                 {
                     serialPort1.PortName = comboBox1.SelectedItem.ToString();
+                    var baudrate = Convert.ToInt32(comboBoxBaudrate.SelectedItem.ToString());
+                    serialPort1.BaudRate = baudrate;
                     serialPort1.Open();
                     btnOpen.Text = "Close";
                 }

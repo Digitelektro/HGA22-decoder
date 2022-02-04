@@ -37,6 +37,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.comboBoxBaudrate = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -55,7 +56,7 @@
             // 
             // btnOpen
             // 
-            this.btnOpen.Location = new System.Drawing.Point(176, 14);
+            this.btnOpen.Location = new System.Drawing.Point(285, 16);
             this.btnOpen.Name = "btnOpen";
             this.btnOpen.Size = new System.Drawing.Size(77, 23);
             this.btnOpen.TabIndex = 1;
@@ -119,11 +120,20 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Received Data";
             // 
+            // comboBoxBaudrate
+            // 
+            this.comboBoxBaudrate.FormattingEnabled = true;
+            this.comboBoxBaudrate.Location = new System.Drawing.Point(182, 16);
+            this.comboBoxBaudrate.Name = "comboBoxBaudrate";
+            this.comboBoxBaudrate.Size = new System.Drawing.Size(97, 21);
+            this.comboBoxBaudrate.TabIndex = 7;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(870, 314);
+            this.Controls.Add(this.comboBoxBaudrate);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.label1);
@@ -149,6 +159,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.ComboBox comboBoxBaudrate;
     }
 }
 
